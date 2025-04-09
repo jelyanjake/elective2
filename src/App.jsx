@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import shoppingCartIcon from './assets/shopping-cart.png';
 
 function App() {
   const [data, setData] = useState([]);
@@ -33,9 +34,9 @@ function App() {
       <header className="header">
         <div className="container">
           <nav>
-            <a href="#" className="logo">burger shop ni winter sa may eskina</a>
+            <a href="#" className="logo">&#127865; Winter's Tambayan</a>
             <ul className="nav-links">
-              <li><a href="#">shopping car</a></li>
+              <li><a href="#"><img src={shoppingCartIcon}></img> Cart</a></li>
             </ul>
           </nav>
         </div>
