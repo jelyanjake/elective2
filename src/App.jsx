@@ -48,7 +48,7 @@ function App() {
 
 
   const CartPopup = () => (
-    <div className="cart-popup">
+    <div className={`cart-popup ${showCart ? 'open' : ''}`}>
       <div className="cart-header">
         <h3>Your Cart</h3>
         <button
@@ -163,7 +163,11 @@ function App() {
           <p>&copy; 2025 Burger Shop. All rights reserved.</p>
         </div>
       </footer>
-      {showCart && <CartPopup />}
+      <div 
+      className={`cart-overlay ${showCart ? 'active' : ''}`}
+      onClick={() => setShowCart(false)}
+      />
+      <CartPopup />
     </div>
   );
 }
