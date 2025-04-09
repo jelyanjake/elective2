@@ -131,7 +131,7 @@ function App() {
       <header className="header">
         <div className="container">
           <nav>
-            <a href="https://youtu.be/dJnY6T1WSYs?si=e_P2KrzRfH74y2tI&t=43" target="_blank" className="logo">&#127865; Bussin' Burgers</a>
+            <a href="https://youtu.be/dJnY6T1WSYs?si=e_P2KrzRfH74y2tI&t=43" target="_blank" className="logo">&#127828; Bussin' Burgers</a>
             <ul className="nav-links">
               <li><button className="cart-btn" onClick={() => setShowCart(!showCart)} ><img src={shoppingCartIcon}></img>{cart.length > 0 && (
                 <span className="cart-badge">{cart.length}</span>

@@ -7,7 +7,7 @@
 
 :root {
   --primary: #d16236;
-  --secondary: #f8f9fa;
+  --secondary: #ffffff;
   --dark: #212529;
   --light: #ffffff;
   --success: #28a745;
@@ -114,7 +114,7 @@ nav {
 }
 
 .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--primary);
 }
 
@@ -126,15 +126,14 @@ nav {
 
 .feature-card {
   background: var(--secondary);
+  border: 1px solid #cfa392;
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
   height: 100%;
   position: relative;
-  /* Add this */
   overflow: hidden;
-  /* Add this */
 }
 
 .feature-card .btn {
