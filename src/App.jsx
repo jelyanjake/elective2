@@ -9,6 +9,15 @@ function App() {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
 
+  const SkeletonCard = () => (
+    <div className="skeleton-card">
+      <div className="skeleton-image"></div>
+      <div className="skeleton-line"></div>
+      <div className="skeleton-line short"></div>
+      <div className="skeleton-line shorter"></div>
+    </div>
+  );
+
   const addToCart = (burger) => {
     setCart(prevCart => {
       // Check if item already exists in cart
@@ -31,7 +40,6 @@ function App() {
 
   const updateQuantity = (id, newQuantity) => {
     if (newQuantity < 1) {
-      removeFromCart(id);
       return;
     }
     setCart(prevCart =>
@@ -116,7 +124,6 @@ function App() {
     fetchData();
   }, []);
 
-  //if (loading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">Error: {error.message}</div>;
 
   return (
@@ -124,7 +131,7 @@ function App() {
       <header className="header">
         <div className="container">
           <nav>
-            <a href="#" className="logo">&#127865; arigato sa imong tanan</a>
+            <a href="https://youtu.be/dJnY6T1WSYs?si=e_P2KrzRfH74y2tI&t=43" target="_blank" className="logo">&#127865; Bussin' Burgers</a>
             <ul className="nav-links">
               <li><button className="cart-btn" onClick={() => setShowCart(!showCart)} ><img src={shoppingCartIcon}></img>{cart.length > 0 && (
                 <span className="cart-badge">{cart.length}</span>
@@ -138,8 +145,7 @@ function App() {
         <section id="features">
           <div className="container">
             <div className="section-title">
-              <h2>Our Burgers</h2>
-              <p>mmmyes cheeseburgir</p>
+              <h2>Delicious and Juicy. No cap, just flavor.</h2>
             </div>
             <div className="features-grid">
               {data.map((burger) => (
@@ -160,7 +166,8 @@ function App() {
 
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2025 Burger Shop. All rights reserved.</p>
+          <p>&copy; 2025 Bussin' Burgers. All rights not reserved.</p>
+          <p>Follow us on Instagram @potatozuu</p>
         </div>
       </footer>
       <div 
