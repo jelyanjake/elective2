@@ -83,7 +83,7 @@ nav {
   margin-right: 20px;
 }
 
-.nav-links a img {
+.nav-links button img {
   width: 25px;
   height: 25px;
   margin-right: 5px;
@@ -161,8 +161,8 @@ nav {
 
 .btn {
   width: 100%;
+  padding: 12px;
 }
-
 /* Footer */
 .footer {
   background-color: var(--light);
@@ -197,5 +197,167 @@ nav {
 
   .nav-links li {
     margin-left: 15px;
+  }
+}
+
+/* Cart Popup */
+.cart-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.quantity-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.quantity-controls button {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: #ff4444;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.cart-footer {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.cart-total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Overlay when cart is open */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Cart Button with Badge */
+.cart-btn {
+  position: relative;
+  background: var(--light);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4444;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Add animation to the badge */
+.cart-badge {
+  /* ... existing styles ... */
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.7); }
+  50% { transform: scale(0.9); }
+  100% { transform: scale(0.7); }
+}
+
+.cart-btn:hover {
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .cart-popup {
+    width: 100%;
   }
 }
