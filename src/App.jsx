@@ -34,7 +34,7 @@ function App() {
       <header className="header">
         <div className="container">
           <nav>
-            <a href="#" className="logo">&#127865; Winter's Tambayan</a>
+            <a href="#" className="logo">&#127865; arigato sa imong tanan</a>
             <ul className="nav-links">
               <li><a href="#"><img src={shoppingCartIcon}></img> Cart</a></li>
             </ul>
@@ -54,8 +54,8 @@ function App() {
               <div key={burger.id} className="feature-card">
                 <img src={burger.avatar} alt={burger.name} />
                 <h3>{burger.name}</h3>
-                <p>{burger.description}test description</p>
-                <p className="price">$7.50{burger.price}</p>
+                <p>{burger.description}</p>
+                <p className="price">${burger.price}</p>
                 <button className="btn">Add to Cart</button>
               </div>
             ))}
