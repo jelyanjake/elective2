@@ -15,8 +15,8 @@ function App() {
       const existingItem = prevCart.find(item => item.id === burger.id);
       if (existingItem) {
         return prevCart.map(item =>
-          item.id === burger.id 
-            ? { ...item, quantity: item.quantity + 1 } 
+          item.id === burger.id
+            ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
@@ -51,14 +51,14 @@ function App() {
     <div className="cart-popup">
       <div className="cart-header">
         <h3>Your Cart</h3>
-        <button 
-          className="close-cart" 
+        <button
+          className="close-cart"
           onClick={() => setShowCart(false)}
         >
           ×
         </button>
       </div>
-      
+
       {cart.length === 0 ? (
         <p className="empty-cart">Your cart is empty</p>
       ) : (
@@ -79,7 +79,7 @@ function App() {
                 </div>
                 <p>${(item.price * item.quantity).toFixed(2)}</p>
               </div>
-              <button 
+              <button
                 className="remove-item"
                 onClick={() => removeFromCart(item.id)}
               >
@@ -89,7 +89,7 @@ function App() {
           ))}
         </div>
       )}
-      
+
       <div className="cart-footer">
         <p className="cart-total">Total: ${cartTotal.toFixed(2)}</p>
         <button className="checkout-btn">Proceed to Checkout</button>
@@ -127,8 +127,8 @@ function App() {
             <a href="#" className="logo">&#127865; arigato sa imong tanan</a>
             <ul className="nav-links">
               <li><button className="cart-btn" onClick={() => setShowCart(!showCart)} ><img src={shoppingCartIcon}></img>{cart.length > 0 && (
-        <span className="cart-badge">{cart.length}</span>
-      )}</button></li>
+                <span className="cart-badge">{cart.length}</span>
+              )}</button></li>
             </ul>
           </nav>
         </div>
@@ -142,15 +142,17 @@ function App() {
               <p>mmmyes cheeseburgir</p>
             </div>
             <div className="features-grid">
-            {data.map((burger) => (
-              <div key={burger.id} className="feature-card">
-                <img src={burger.avatar} alt={burger.name} />
-                <h3>{burger.name}</h3>
-                <p>{burger.description}</p>
-                <p className="price">${burger.price}</p>
-                <button className="btn" onClick={() => addToCart(burger)}>Add to Cart</button>
-              </div>
-            ))}
+              {data.map((burger) => (
+                <div key={burger.id} className="feature-card">
+                  <div className='feature-card-content'>
+                    <img src={burger.avatar} alt={burger.name} />
+                    <h3>{burger.name}</h3>
+                    <p>{burger.description}</p>
+                    <p className="price">${burger.price}</p>
+                  </div>
+                  <button className="btn" onClick={() => addToCart(burger)}>Add to Cart</button>
+                </div>
+              ))}
             </div>
           </div>
         </section>

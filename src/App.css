@@ -14,7 +14,8 @@
 }
 
 html {
-  overflow-x: hidden; /* Apply here instead of * selector */
+  overflow-x: hidden;
+  /* Apply here instead of * selector */
 }
 
 body {
@@ -130,10 +131,41 @@ nav {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
   height: 100%;
+  position: relative;
+  /* Add this */
+  overflow: hidden;
+  /* Add this */
 }
 
+.feature-card .btn {
+  position: absolute;
+  bottom: -50px;
+  /* Start hidden below the card */
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 0 0 10px 10px;
+  /* Match card's border radius */
+}
+
+.feature-card:hover .btn {
+  bottom: 0;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add padding to card content to prevent overlap */
+.feature-card-content {
+  padding-bottom: 20px;
+  /* Space for button */
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Slight card lift on hover */
 .feature-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card img {
@@ -162,7 +194,16 @@ nav {
 .btn {
   width: 100%;
   padding: 12px;
+  background: var(--primary);
+  color: white;
+  padding: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 /* Footer */
 .footer {
   background-color: var(--light);
@@ -174,30 +215,11 @@ nav {
 }
 
 /* Loading and Error States */
-.loading, .error {
+.loading,
+.error {
   padding: 100px 20px;
   text-align: center;
   font-size: 1.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-
-.logo {
-  margin-left: 20px
-}
-
-  .main-content {
-    padding-top: 15px;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-links li {
-    margin-left: 15px;
-  }
 }
 
 /* Cart Popup */
@@ -346,9 +368,17 @@ nav {
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.7); }
-  50% { transform: scale(0.9); }
-  100% { transform: scale(0.7); }
+  0% {
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(0.7);
+  }
 }
 
 .cart-btn:hover {
@@ -359,5 +389,24 @@ nav {
 @media (max-width: 480px) {
   .cart-popup {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .logo {
+    margin-left: 20px
+  }
+
+  .main-content {
+    padding-top: 15px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links li {
+    margin-left: 15px;
   }
 }
