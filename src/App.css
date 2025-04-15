@@ -248,7 +248,7 @@ nav {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color:#1eff00;
+  color:#212529;
 }
 
 .cart-items {
@@ -288,7 +288,7 @@ nav {
   border: 1px solid #ddd;
   background: white;
   cursor: pointer;
-  color:#1eff00;
+  color:#212529;
 }
 
 .remove-item {
