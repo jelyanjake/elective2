@@ -131,7 +131,7 @@ function App() {
       <header className="header">
         <div className="container">
           <nav>
-            <a href="#" target="_blank" className="logo">&#127828; Bussin' Burgers</a>
+            <a href="#" className="logo">&#127828; Bussin' Burgers</a>
             <ul className="nav-links">
               <li><button className="cart-btn" onClick={() => setShowCart(!showCart)} ><img src={shoppingCartIcon}></img>{cart.length > 0 && (
                 <span className="cart-badge">{cart.length}</span>
