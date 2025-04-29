@@ -108,7 +108,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://67f50ba7913986b16fa2f9ff.mockapi.io/api/v1/burgers');
+        const response = await fetch('https://68103cb727f2fdac2410a610.mockapi.io/api/elective2/burgers');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
