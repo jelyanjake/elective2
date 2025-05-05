@@ -156,7 +156,7 @@ function App() {
       <footer className="footer">
         <div className="container">
           <p>&copy; 2025 Bussin' Burgers. All rights not reserved.</p>
-          <p>Follow us on Instagram @potatozuu</p>
+          <p>Follow us on Instagram @potatozu</p>
         </div>
       </footer>
       <div 
