@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import shoppingCartIcon from './assets/shopping-cart.png';
+import axios from 'axios';
 
 function App() {
   const [data, setData] = useState([]);
@@ -8,15 +9,6 @@ function App() {
   const [error, setError] = useState(null);
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
-
-  const SkeletonCard = () => (
-    <div className="skeleton-card">
-      <div className="skeleton-image"></div>
-      <div className="skeleton-line"></div>
-      <div className="skeleton-line short"></div>
-      <div className="skeleton-line shorter"></div>
-    </div>
-  );
 
   const addToCart = (burger) => {
     setCart(prevCart => {
@@ -108,12 +100,9 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://68103cb727f2fdac2410a610.mockapi.io/api/elective2/burgers');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const result = await response.json();
-        setData(result);
+        //backup https://67f50ba7913986b16fa2f9ff.mockapi.io/api/v1/burgers
+        const response = await axios.get('https://68103cb727f2fdac2410a610.mockapi.io/api/elective2/burgers');
+        setData(response.data);
       } catch (error) {
         setError(error);
       } finally {
