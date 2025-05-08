@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import shoppingCartIcon from './assets/shopping-cart.png';
-import axios from 'axios';
+import { fetchBurgers } from './api/api';
 
 function App() {
   const [data, setData] = useState([]);
@@ -98,19 +98,17 @@ function App() {
   );
 
   useEffect(() => {
-    const fetchData = async () => {
+    const loadData = async () => {
       try {
-        //backup https://67f50ba7913986b16fa2f9ff.mockapi.io/api/v1/burgers
-        const response = await axios.get('https://68103cb727f2fdac2410a610.mockapi.io/api/elective2/burgers');
-        setData(response.data);
-      } catch (error) {
-        setError(error);
+        const burgers = await fetchBurgers();
+        setData(burgers);
+      } catch (err) {
+        setError(err);
       } finally {
         setLoading(false);
       }
     };
-
-    fetchData();
+    loadData();
   }, []);
 
   if (error) return <div className="error">Error: {error.message}</div>;
